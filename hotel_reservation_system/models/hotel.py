@@ -1,13 +1,19 @@
 """
-PEP8/Flake8/Pylint-compliant definition for the Hotel class.
+Hotel class.
 """
+
 
 class Hotel:
     """
     Represents a Hotel with basic attributes.
     """
-    def __init__(self, hotel_id: str, name: str, location: str, total_rooms: int):
+
+    def __init__(
+            self, hotel_id: str, name: str, location: str, total_rooms: int
+            ):
         """
+        Initializes a new Hotel instance.
+
         :param hotel_id: Unique identifier for the hotel
         :param name: Hotel name
         :param location: Hotel location
@@ -20,6 +26,20 @@ class Hotel:
 
     def __str__(self):
         """
-        String representation of the hotel.
+        Returns the string representation of the hotel.
         """
-        return f"Hotel({self.hotel_id}, {self.name}, {self.location}, rooms={self.total_rooms})"
+        return (
+            f"Hotel({self.hotel_id}, {self.name}, {self.location}, "
+            f"rooms={self.total_rooms})"
+        )
+
+    def to_dict(self):
+        """
+        Returns a dictionary representation of the hotel.
+        """
+        return {
+            "hotel_id": self.hotel_id,
+            "name": self.name,
+            "location": self.location,
+            "total_rooms": self.total_rooms,
+        }

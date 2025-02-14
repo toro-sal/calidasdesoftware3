@@ -1,0 +1,41 @@
+hotel_reservation_system/main.py:80:80: E501 line too long (88 > 79 characters)
+hotel_reservation_system/main.py:83:80: E501 line too long (85 > 79 characters)
+hotel_reservation_system/main.py:135:80: E501 line too long (85 > 79 characters)
+hotel_reservation_system/managers/customer_manager.py:12:61: E231 missing whitespace after ','
+hotel_reservation_system/managers/customer_manager.py:12:80: E501 line too long (86 > 79 characters)
+hotel_reservation_system/managers/customer_manager.py:46:80: E501 line too long (82 > 79 characters)
+hotel_reservation_system/managers/customer_manager.py:64:80: E501 line too long (83 > 79 characters)
+hotel_reservation_system/managers/customer_manager.py:69:80: E501 line too long (81 > 79 characters)
+hotel_reservation_system/managers/hotel_manager.py:12:58: E231 missing whitespace after ','
+hotel_reservation_system/managers/hotel_manager.py:12:80: E501 line too long (80 > 79 characters)
+hotel_reservation_system/managers/hotel_manager.py:66:80: E501 line too long (95 > 79 characters)
+hotel_reservation_system/managers/reservation_manager.py:12:64: E231 missing whitespace after ','
+hotel_reservation_system/managers/reservation_manager.py:12:80: E501 line too long (92 > 79 characters)
+hotel_reservation_system/managers/reservation_manager.py:49:80: E501 line too long (85 > 79 characters)
+hotel_reservation_system/managers/reservation_manager.py:81:80: E501 line too long (87 > 79 characters)
+hotel_reservation_system/managers/reservation_manager.py:106:80: E501 line too long (82 > 79 characters)
+hotel_reservation_system/models/customer.py:5:1: E302 expected 2 blank lines, found 1
+hotel_reservation_system/models/hotel.py:5:1: E302 expected 2 blank lines, found 1
+hotel_reservation_system/models/hotel.py:9:80: E501 line too long (82 > 79 characters)
+hotel_reservation_system/models/hotel.py:25:80: E501 line too long (96 > 79 characters)
+hotel_reservation_system/models/reservation.py:5:1: E302 expected 2 blank lines, found 1
+hotel_reservation_system/models/reservation.py:35:80: E501 line too long (83 > 79 characters)
+hotel_reservation_system/tests/test_customer_manager.py:3:1: F401 'json' imported but unused
+hotel_reservation_system/tests/test_customer_manager.py:8:1: E302 expected 2 blank lines, found 1
+hotel_reservation_system/tests/test_customer_manager.py:31:80: E501 line too long (83 > 79 characters)
+hotel_reservation_system/tests/test_customer_manager.py:39:80: E501 line too long (82 > 79 characters)
+hotel_reservation_system/tests/test_customer_manager.py:48:80: E501 line too long (106 > 79 characters)
+hotel_reservation_system/tests/test_customer_manager.py:58:1: E305 expected 2 blank lines after class or function definition, found 1
+hotel_reservation_system/tests/test_hotel_manager.py:3:1: F401 'json' imported but unused
+hotel_reservation_system/tests/test_hotel_manager.py:8:1: E302 expected 2 blank lines, found 1
+hotel_reservation_system/tests/test_hotel_manager.py:31:80: E501 line too long (85 > 79 characters)
+hotel_reservation_system/tests/test_hotel_manager.py:49:80: E501 line too long (98 > 79 characters)
+hotel_reservation_system/tests/test_hotel_manager.py:59:1: E305 expected 2 blank lines after class or function definition, found 1
+hotel_reservation_system/tests/test_reservation_manager.py:3:1: F401 'json' imported but unused
+hotel_reservation_system/tests/test_reservation_manager.py:4:80: E501 line too long (82 > 79 characters)
+hotel_reservation_system/tests/test_reservation_manager.py:8:1: E302 expected 2 blank lines, found 1
+hotel_reservation_system/tests/test_reservation_manager.py:31:80: E501 line too long (102 > 79 characters)
+hotel_reservation_system/tests/test_reservation_manager.py:40:80: E501 line too long (96 > 79 characters)
+hotel_reservation_system/tests/test_reservation_manager.py:42:80: E501 line too long (100 > 79 characters)
+hotel_reservation_system/tests/test_reservation_manager.py:45:80: E501 line too long (96 > 79 characters)
+hotel_reservation_system/tests/test_reservation_manager.py:53:1: E305 expected 2 blank lines after class or function definition, found 1

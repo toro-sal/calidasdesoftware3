@@ -1,0 +1,47 @@
+************* Module main
+hotel_reservation_system/main.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/main.py:10:0: R0914: Too many local variables (25/15) (too-many-locals)
+hotel_reservation_system/main.py:10:0: R0912: Too many branches (39/12) (too-many-branches)
+hotel_reservation_system/main.py:10:0: R0915: Too many statements (132/50) (too-many-statements)
+************* Module managers.reservation_manager
+hotel_reservation_system/managers/reservation_manager.py:70:4: R0913: Too many arguments (7/5) (too-many-arguments)
+hotel_reservation_system/managers/reservation_manager.py:70:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+************* Module tests.test_reservation_manager
+hotel_reservation_system/tests/test_reservation_manager.py:31:0: C0301: Line too long (102/100) (line-too-long)
+hotel_reservation_system/tests/test_reservation_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+hotel_reservation_system/tests/test_reservation_manager.py:8:0: C0115: Missing class docstring (missing-class-docstring)
+hotel_reservation_system/tests/test_reservation_manager.py:30:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_reservation_manager.py:39:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_reservation_manager.py:44:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_reservation_manager.py:49:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_reservation_manager.py:3:0: W0611: Unused import json (unused-import)
+************* Module tests.test_customer_manager
+hotel_reservation_system/tests/test_customer_manager.py:48:0: C0301: Line too long (106/100) (line-too-long)
+hotel_reservation_system/tests/test_customer_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+hotel_reservation_system/tests/test_customer_manager.py:8:0: C0115: Missing class docstring (missing-class-docstring)
+hotel_reservation_system/tests/test_customer_manager.py:30:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_customer_manager.py:36:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_customer_manager.py:41:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_customer_manager.py:46:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_customer_manager.py:54:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_customer_manager.py:3:0: W0611: Unused import json (unused-import)
+************* Module tests.test_hotel_manager
+hotel_reservation_system/tests/test_hotel_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+hotel_reservation_system/tests/test_hotel_manager.py:8:0: C0115: Missing class docstring (missing-class-docstring)
+hotel_reservation_system/tests/test_hotel_manager.py:30:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_hotel_manager.py:37:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_hotel_manager.py:42:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_hotel_manager.py:47:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_hotel_manager.py:55:4: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/tests/test_hotel_manager.py:3:0: W0611: Unused import json (unused-import)
+************* Module models.reservation
+hotel_reservation_system/models/reservation.py:9:4: R0913: Too many arguments (7/5) (too-many-arguments)
+hotel_reservation_system/models/reservation.py:9:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+hotel_reservation_system/models/reservation.py:5:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module models.customer
+hotel_reservation_system/models/customer.py:5:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+************* Module models.hotel
+hotel_reservation_system/models/hotel.py:5:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+
+-----------------------------------
+Your code has been rated at 9.26/10

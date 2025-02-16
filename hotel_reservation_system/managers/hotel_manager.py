@@ -6,12 +6,13 @@ Stores data in a JSON file.
 import json
 import os
 from typing import List, Optional
-
 from models.hotel import Hotel
 
-HOTEL_DATA_FILE = os.path.join(
-    "hotel_reservation_system", "data", "hotels.json"
-    )
+
+BASE_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+    )  # Ruta absoluta del script
+HOTEL_DATA_FILE = os.path.join(BASE_DIR, "../data/hotels.json")
 
 
 class HotelManager:

@@ -70,6 +70,24 @@ class TestCustomerManager(unittest.TestCase):
         cust = self.manager.get_customer_by_id("NonExistent")
         self.assertIsNone(cust)
 
+    def test_create_customer_invalid_phone(self):
+        """Test creating a customer with an invalid "
+        "phone number should raise ValueError."""
+        with self.assertRaises(ValueError):
+            self.manager.create_customer("C104", "Invalid User", "")
+
+    def test_modify_nonexistent_customer(self):
+        """Test modifying a customer"
+        " that doesn't exist should return False."""
+        result = self.manager.modify_customer_information(
+            "NonExistent", name="New Name"
+            )
+        self.assertFalse(result)
+
+    def test_delete_nonexistent_customer(self):
+        """Test deleting a non-existent customer should return False."""
+        self.assertFalse(self.manager.delete_customer("FakeID"))
+
 
 if __name__ == '__main__':
     unittest.main()

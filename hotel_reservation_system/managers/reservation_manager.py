@@ -15,9 +15,10 @@ from models.reservation import Reservation
 
 logging.basicConfig(level=logging.INFO)
 
-RESERVATION_DATA_FILE = os.path.join(
-    "hotel_reservation_system", "data", "reservations.json"
-)
+BASE_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+    )  # Ruta absoluta del script
+RESERVATION_DATA_FILE = os.path.join(BASE_DIR, "../data/reservations.json")
 
 
 class ReservationManager:

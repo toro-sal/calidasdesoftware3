@@ -6,11 +6,14 @@ Stores data in a JSON file.
 import json
 import os
 from typing import List, Optional
-
 from models.customer import Customer
 
+BASE_DIR = os.path.dirname(
+    os.path.abspath(__file__)
+    )
+
 CUSTOMER_DATA_FILE = os.path.join(
-    "hotel_reservation_system", "data", "customers.json"
+    BASE_DIR, "../data/customers.json"
     )
 
 

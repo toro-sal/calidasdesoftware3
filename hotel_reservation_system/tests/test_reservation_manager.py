@@ -89,6 +89,50 @@ class TestReservationManager(unittest.TestCase):
         res = self.manager.get_reservation_by_id("NonExistent")
         self.assertIsNone(res)
 
+    def test_create_reservation_invalid_dates(self):
+        """Test creating a reservation with "
+        "invalid dates should raise ValueError."""
+        with self.assertRaises(ValueError):
+            self.manager.create_reservation({
+                "reservation_id": "R200",
+                "customer_id": "C300",
+                "hotel_id": "H300",
+                "room_number": 105,
+                "check_in": "2025-05-10",
+                "check_out": "2025-05-01"
+            })
+
+    def test_cancel_nonexistent_reservation(self):
+        """Test canceling a non-existent "
+        "reservation should return False."""
+        self.assertFalse(self.manager.cancel_reservation("FakeID"))
+
+    def test_create_reservation_nonexistent_hotel(self):
+        """Test creating a reservation for "
+        "a non-existent hotel should raise ValueError."""
+        with self.assertRaises(ValueError):
+            self.manager.create_reservation({
+                "reservation_id": "R201",
+                "customer_id": "C301",
+                "hotel_id": "NonExistent",
+                "room_number": 200,
+                "check_in": "2025-06-01",
+                "check_out": "2025-06-05"
+            })
+
+    def test_create_reservation_nonexistent_customer(self):
+        """Test creating a reservation for a "
+        "non-existent customer should raise ValueError."""
+        with self.assertRaises(ValueError):
+            self.manager.create_reservation({
+                "reservation_id": "R202",
+                "customer_id": "NonExistent",
+                "hotel_id": "H302",
+                "room_number": 205,
+                "check_in": "2025-07-01",
+                "check_out": "2025-07-05"
+            })
+
 
 if __name__ == '__main__':
     unittest.main()

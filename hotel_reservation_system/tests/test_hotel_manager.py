@@ -69,6 +69,23 @@ class TestHotelManager(unittest.TestCase):
         hotel = self.manager.get_hotel_by_id("NonExistent")
         self.assertIsNone(hotel)
 
+    def test_create_hotel_invalid_name(self):
+        """Test creating a hotel with an empty name should raise ValueError."""
+        with self.assertRaises(ValueError):
+            self.manager.create_hotel("H104", "", "Test City", 50)
+
+    def test_modify_nonexistent_hotel(self):
+        """Test modifying a hotel that"
+        " doesn't exist should return False."""
+        result = self.manager.modify_hotel_information(
+            "NonExistent", name="New Hotel Name"
+            )
+        self.assertFalse(result)
+
+    def test_delete_nonexistent_hotel(self):
+        """Test deleting a non-existent hotel should return False."""
+        self.assertFalse(self.manager.delete_hotel("FakeID"))
+
 
 if __name__ == '__main__':
     unittest.main()

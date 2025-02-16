@@ -1,0 +1,94 @@
+
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.004s
+
+OK
+Name                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------
+main.py                               109    109     0%   4-188
+managers/__init__.py                    0      0   100%
+managers/customer_manager.py           67     18    73%   39-54, 100-106, 114
+managers/hotel_manager.py              70     20    71%   37-52, 99-106, 114, 119
+managers/reservation_manager.py        52     15    71%   43-54, 113-126
+models/__init__.py                      0      0   100%
+models/customer.py                      9      2    78%   27, 33
+models/hotel.py                        10      2    80%   31, 40
+models/reservation.py                  15      2    87%   26, 32
+tests/__init__.py                       0      0   100%
+tests/test_customer_manager.py         45      3    93%   23, 29, 75
+tests/test_hotel_manager.py            47      3    94%   23, 29, 74
+tests/test_reservation_manager.py      42      3    93%   24, 30, 94
+-----------------------------------------------------------------
+TOTAL                                 466    177    62%
+
+
+
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.004s
+
+OK
+Name                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------
+main.py                                42     42     0%   5-67
+managers/__init__.py                    0      0   100%
+managers/customer_manager.py           67     18    73%   39-54, 100-106, 114
+managers/hotel_manager.py              70     20    71%   37-52, 99-106, 114, 119
+managers/reservation_manager.py        52     15    71%   43-54, 113-126
+models/__init__.py                      0      0   100%
+models/customer.py                      9      2    78%   27, 33
+models/hotel.py                        10      2    80%   31, 40
+models/reservation.py                  15      2    87%   26, 32
+tests/__init__.py                       0      0   100%
+tests/test_customer_manager.py         45      3    93%   23, 29, 75
+tests/test_hotel_manager.py            47      3    94%   23, 29, 74
+tests/test_reservation_manager.py      42      3    93%   24, 30, 94
+-----------------------------------------------------------------
+TOTAL                                 399    110    72%
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.005s
+
+FAILED (failures=1)
+Name                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------
+main.py                                 9      1    89%   16
+managers/__init__.py                    0      0   100%
+managers/customer_manager.py           67     14    79%   43-54, 100-106, 114
+managers/hotel_manager.py              70     16    77%   41-52, 99-106, 114, 119
+managers/reservation_manager.py        52     11    79%   47-54, 113-126
+models/__init__.py                      0      0   100%
+models/customer.py                      9      2    78%   27, 33
+models/hotel.py                        10      2    80%   31, 40
+models/reservation.py                  15      2    87%   26, 32
+tests/__init__.py                       0      0   100%
+tests/test_customer_manager.py         45      3    93%   23, 29, 75
+tests/test_hotel_manager.py            47      3    94%   23, 29, 74
+tests/test_main.py                     14      3    79%   12-13, 16
+tests/test_reservation_manager.py      42      3    93%   24, 30, 94
+-----------------------------------------------------------------
+TOTAL                                 380     60    84%
+
+
+Ran 25 tests in 0.009s
+
+FAILED (failures=5)
+Name                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------
+main.py                                 9      1    89%   16
+managers/__init__.py                    0      0   100%
+managers/customer_manager.py           67     13    81%   43-54, 100-106
+managers/hotel_manager.py              70     15    79%   41-52, 99-106, 119
+managers/reservation_manager.py        52     11    79%   47-54, 113-126
+models/__init__.py                      0      0   100%
+models/customer.py                      9      2    78%   27, 33
+models/hotel.py                        10      2    80%   31, 40
+models/reservation.py                  15      1    93%   32
+tests/__init__.py                       0      0   100%
+tests/test_customer_manager.py         53      3    94%   23, 29, 89
+tests/test_hotel_manager.py            55      3    95%   23, 29, 87
+tests/test_main.py                     14      3    79%   12-13, 16
+tests/test_reservation_manager.py      53      3    94%   24, 30, 133
+-----------------------------------------------------------------
+TOTAL                                 407     57    86%

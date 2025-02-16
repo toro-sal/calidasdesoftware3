@@ -45,3 +45,24 @@ hotel_reservation_system/models/hotel.py:5:0: R0903: Too few public methods (1/2
 
 -----------------------------------
 Your code has been rated at 9.26/10
+
+************* Module main
+hotel_reservation_system/main.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+hotel_reservation_system/main.py:10:0: R0914: Too many local variables (25/15) (too-many-locals)
+hotel_reservation_system/main.py:107:26: E1123: Unexpected keyword argument 'reservation_id' in method call (unexpected-keyword-arg)
+hotel_reservation_system/main.py:107:26: E1123: Unexpected keyword argument 'customer_id' in method call (unexpected-keyword-arg)
+hotel_reservation_system/main.py:107:26: E1123: Unexpected keyword argument 'hotel_id' in method call (unexpected-keyword-arg)
+hotel_reservation_system/main.py:107:26: E1123: Unexpected keyword argument 'room_number' in method call (unexpected-keyword-arg)
+hotel_reservation_system/main.py:107:26: E1123: Unexpected keyword argument 'check_in' in method call (unexpected-keyword-arg)
+hotel_reservation_system/main.py:107:26: E1123: Unexpected keyword argument 'check_out' in method call (unexpected-keyword-arg)
+hotel_reservation_system/main.py:107:26: E1120: No value for argument 'reservation_data' in method call (no-value-for-parameter)
+hotel_reservation_system/main.py:10:0: R0912: Too many branches (39/12) (too-many-branches)
+hotel_reservation_system/main.py:10:0: R0915: Too many statements (132/50) (too-many-statements)
+
+------------------------------------------------------------------
+Your code has been rated at 9.80/10 (previous run: 9.26/10, +0.54)
+
+
+
+-------------------------------------------------------------------
+Your code has been rated at 10.00/10 (previous run: 9.80/10, +0.20)

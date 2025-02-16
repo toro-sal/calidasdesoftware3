@@ -1,37 +1,35 @@
 """
-PEP8/Flake8/Pylint-compliant definition for the Reservation class.
+Module defining the Reservation class, compliant with PEP8, Flake8, and Pylint.
 """
 
+from dataclasses import dataclass
+from datetime import date
+
+
+@dataclass
 class Reservation:
     """
-    Represents a Reservation with basic attributes.
+    Represents a reservation with basic attributes.
     """
-    def __init__(self,
-                 reservation_id: str,
-                 customer_id: str,
-                 hotel_id: str,
-                 room_number: int,
-                 check_in: str,
-                 check_out: str):
+    reservation_id: str
+    customer_id: str
+    hotel_id: str
+    room_number: int
+    check_in: date
+    check_out: date
+
+    def __post_init__(self):
         """
-        :param reservation_id: Unique identifier for the reservation
-        :param customer_id: Unique identifier of the customer
-        :param hotel_id: Unique identifier of the hotel
-        :param room_number: Assigned room number in the hotel
-        :param check_in: Check-in date (string or datetime)
-        :param check_out: Check-out date (string or datetime)
+        Validates the reservation details after initialization.
         """
-        self.reservation_id = reservation_id
-        self.customer_id = customer_id
-        self.hotel_id = hotel_id
-        self.room_number = room_number
-        self.check_in = check_in
-        self.check_out = check_out
+        if self.check_in >= self.check_out:
+            raise ValueError("Check-in date must be before check-out date.")
 
     def __str__(self):
         """
-        String representation of the reservation.
+        Returns a string representation of the reservation.
         """
-        return (f"Reservation({self.reservation_id}, Customer={self.customer_id}, "
+        return (f"Reservation({self.reservation_id}, "
+                f"Customer={self.customer_id}, "
                 f"Hotel={self.hotel_id}, Room={self.room_number}, "
                 f"CheckIn={self.check_in}, CheckOut={self.check_out})")

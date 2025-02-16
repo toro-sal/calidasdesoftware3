@@ -39,3 +39,10 @@ hotel_reservation_system/tests/test_reservation_manager.py:40:80: E501 line too 
 hotel_reservation_system/tests/test_reservation_manager.py:42:80: E501 line too long (100 > 79 characters)
 hotel_reservation_system/tests/test_reservation_manager.py:45:80: E501 line too long (96 > 79 characters)
 hotel_reservation_system/tests/test_reservation_manager.py:53:1: E305 expected 2 blank lines after class or function definition, found 1
+
+#######################################################################################
+
+
+hotel_reservation_system/main.py:80:80: E501 line too long (88 > 79 characters)
+hotel_reservation_system/main.py:83:80: E501 line too long (85 > 79 characters)
+hotel_reservation_system/main.py:135:80: E501 line too long (85 > 79 characters)

@@ -1,60 +1,37 @@
 """
-Reservation class.
+PEP8/Flake8/Pylint-compliant definition for the Reservation class.
 """
-
-
-from dataclasses import dataclass
-
-
-@dataclass
-class ReservationDetails:
-    """
-    Holds the details of a reservation.
-    """
-    reservation_id: str
-    customer_id: str
-    hotel_id: str
-    room_number: int
-    check_in: str
-    check_out: str
-
 
 class Reservation:
     """
     Represents a Reservation with basic attributes.
     """
-
-    def __init__(self, details: ReservationDetails):
+    def __init__(self,
+                 reservation_id: str,
+                 customer_id: str,
+                 hotel_id: str,
+                 room_number: int,
+                 check_in: str,
+                 check_out: str):
         """
-        Initializes a new Reservation instance.
-
-        :param details: ReservationDetails
-         object containing all reservation data.
+        :param reservation_id: Unique identifier for the reservation
+        :param customer_id: Unique identifier of the customer
+        :param hotel_id: Unique identifier of the hotel
+        :param room_number: Assigned room number in the hotel
+        :param check_in: Check-in date (string or datetime)
+        :param check_out: Check-out date (string or datetime)
         """
-        self.details = details
+        self.reservation_id = reservation_id
+        self.customer_id = customer_id
+        self.hotel_id = hotel_id
+        self.room_number = room_number
+        self.check_in = check_in
+        self.check_out = check_out
 
     def __str__(self):
         """
-        Returns the string representation of the reservation.
+        String representation of the reservation.
         """
-        return (
-            f"Reservation({self.details.reservation_id}, "
-            f"Customer={self.details.customer_id}, "
-            f"Hotel={self.details.hotel_id}, "
-            f"Room={self.details.room_number}, "
-            f"CheckIn={self.details.check_in}, "
-            f"CheckOut={self.details.check_out})"
-        )
-
-    def to_dict(self):
-        """
-        Returns a dictionary representation of the reservation.
-        """
-        return {
-            "reservation_id": self.details.reservation_id,
-            "customer_id": self.details.customer_id,
-            "hotel_id": self.details.hotel_id,
-            "room_number": self.details.room_number,
-            "check_in": self.details.check_in,
-            "check_out": self.details.check_out,
-        }
+        return (f"Reservation({self.reservation_id}, Customer={self.customer_id}, "
+                f"Hotel={self.hotel_id}, Room={self.room_number}, "
+                f"CheckIn={self.check_in}, CheckOut={self.check_out})")

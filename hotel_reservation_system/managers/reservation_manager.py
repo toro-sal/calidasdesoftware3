@@ -1,15 +1,23 @@
 """
-Manager class that handles operations for Reservations.
-Stores data in a JSON file.
+Reservation Manager Module
+
+This module provides a class to manage hotel reservations, including:
+- Loading and saving reservations from a JSON file.
+- Creating and canceling reservations.
+- Retrieving reservation details.
 """
 
 import json
 import os
+import logging
 from typing import List, Optional
-
 from models.reservation import Reservation
 
-RESERVATION_DATA_FILE = os.path.join("hotel_reservation_system","data", "reservations.json")
+logging.basicConfig(level=logging.INFO)
+
+RESERVATION_DATA_FILE = os.path.join(
+    "hotel_reservation_system", "data", "reservations.json"
+)
 
 
 class ReservationManager:
@@ -36,58 +44,36 @@ class ReservationManager:
                 data = json.load(file)
                 for item in data:
                     try:
-                        reservation = Reservation(
-                            reservation_id=item["reservation_id"],
-                            customer_id=item["customer_id"],
-                            hotel_id=item["hotel_id"],
-                            room_number=int(item["room_number"]),
-                            check_in=item["check_in"],
-                            check_out=item["check_out"]
-                        )
+                        reservation = Reservation(**item)
                         self.reservations.append(reservation)
                     except (KeyError, ValueError, TypeError) as error:
-                        print(f"Error loading reservation record: {item} => {error}")
+                        logging.warning("Error loading reservation "
+                                        "record: %s => %s", item, error)
         except (json.JSONDecodeError, OSError) as error:
-            print(f"Error reading reservation file: {error}")
+            logging.error("Error reading reservation file: %s", error)
 
     def save_reservations(self) -> None:
         """
         Saves reservation data to the JSON file.
         """
-        data = []
-        for res in self.reservations:
-            data.append({
-                "reservation_id": res.reservation_id,
-                "customer_id": res.customer_id,
-                "hotel_id": res.hotel_id,
-                "room_number": res.room_number,
-                "check_in": res.check_in,
-                "check_out": res.check_out
-            })
+        data = [res.__dict__ for res in self.reservations]
         with open(RESERVATION_DATA_FILE, "w", encoding="utf-8") as file:
             json.dump(data, file, indent=4)
 
-    def create_reservation(self,
-                           reservation_id: str,
-                           customer_id: str,
-                           hotel_id: str,
-                           room_number: int,
-                           check_in: str,
-                           check_out: str) -> Reservation:
+    def create_reservation(self, reservation_data: dict) -> Reservation:
         """
         Creates a new Reservation if not already existing.
         """
-        if self.get_reservation_by_id(reservation_id) is not None:
-            raise ValueError(f"Reservation with ID '{reservation_id}' already exists.")
+        if (
+            self.get_reservation_by_id(reservation_data["reservation_id"])
+            is not None
+        ):
+            raise ValueError(
+                f"Reservation with ID '{reservation_data['reservation_id']}'"
+                " already exists."
+            )
 
-        new_reservation = Reservation(
-            reservation_id,
-            customer_id,
-            hotel_id,
-            room_number,
-            check_in,
-            check_out
-        )
+        new_reservation = Reservation(**reservation_data)
         self.reservations.append(new_reservation)
         self.save_reservations()
         return new_reservation
@@ -103,14 +89,21 @@ class ReservationManager:
             return True
         return False
 
-    def get_reservation_by_id(self, reservation_id: str) -> Optional[Reservation]:
+    def get_reservation_by_id(
+        self, reservation_id: str
+    ) -> Optional[Reservation]:
+
         """
         Returns a Reservation object by ID or None if not found.
         """
-        for res in self.reservations:
-            if res.reservation_id == reservation_id:
-                return res
-        return None
+        return next(
+            (
+                res
+                for res in self.reservations
+                if res.reservation_id == reservation_id
+            ),
+            None
+        )
 
     def display_reservation_information(self, reservation_id: str) -> None:
         """
@@ -118,11 +111,16 @@ class ReservationManager:
         """
         reservation = self.get_reservation_by_id(reservation_id)
         if reservation:
-            print(f"Reservation ID: {reservation.reservation_id}")
-            print(f"Customer ID: {reservation.customer_id}")
-            print(f"Hotel ID: {reservation.hotel_id}")
-            print(f"Room Number: {reservation.room_number}")
-            print(f"Check-In: {reservation.check_in}")
-            print(f"Check-Out: {reservation.check_out}")
+            logging.info(
+                "Reservation ID: %s\nCustomer ID: %s\nHotel ID:"
+                " %s\nRoom Number: %d\nCheck-In: %s\nCheck-Out: %s",
+                reservation.reservation_id,
+                reservation.customer_id,
+                reservation.hotel_id,
+                reservation.room_number,
+                reservation.check_in,
+                reservation.check_out,
+            )
         else:
-            print(f"No reservation found with ID '{reservation_id}'.")
+            logging.warning("No reservation "
+                            "found with ID '%s'.", reservation_id)

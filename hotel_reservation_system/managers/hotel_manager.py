@@ -9,7 +9,9 @@ from typing import List, Optional
 
 from models.hotel import Hotel
 
-HOTEL_DATA_FILE = os.path.join("hotel_reservation_system","data", "hotels.json")
+HOTEL_DATA_FILE = os.path.join(
+    "hotel_reservation_system", "data", "hotels.json"
+    )
 
 
 class HotelManager:
@@ -63,7 +65,9 @@ class HotelManager:
         with open(HOTEL_DATA_FILE, "w", encoding="utf-8") as file:
             json.dump(data, file, indent=4)
 
-    def create_hotel(self, hotel_id: str, name: str, location: str, total_rooms: int) -> Hotel:
+    def create_hotel(
+            self, hotel_id: str, name: str, location: str, total_rooms: int
+            ) -> Hotel:
         """
         Creates a new Hotel and saves it to file.
         """

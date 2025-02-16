@@ -9,7 +9,9 @@ from typing import List, Optional
 
 from models.customer import Customer
 
-CUSTOMER_DATA_FILE = os.path.join("hotel_reservation_system","data", "customers.json")
+CUSTOMER_DATA_FILE = os.path.join(
+    "hotel_reservation_system", "data", "customers.json"
+    )
 
 
 class CustomerManager:
@@ -43,7 +45,8 @@ class CustomerManager:
                         )
                         self.customers.append(customer)
                     except (KeyError, ValueError, TypeError) as error:
-                        print(f"Error loading customer record: {item} => {error}")
+                        print("Error loading "
+                              f"customer record: {item} => {error}")
         except (json.JSONDecodeError, OSError) as error:
             print(f"Error reading customer file: {error}")
 
@@ -61,12 +64,15 @@ class CustomerManager:
         with open(CUSTOMER_DATA_FILE, "w", encoding="utf-8") as file:
             json.dump(data, file, indent=4)
 
-    def create_customer(self, customer_id: str, name: str, phone: str) -> Customer:
+    def create_customer(
+            self, customer_id: str, name: str, phone: str
+            ) -> Customer:
         """
         Creates a new Customer and saves it.
         """
         if self.get_customer_by_id(customer_id) is not None:
-            raise ValueError(f"Customer with ID '{customer_id}' already exists.")
+            raise ValueError("Customer with "
+                             f"ID '{customer_id}' already exists.")
 
         new_customer = Customer(customer_id, name, phone)
         self.customers.append(new_customer)
